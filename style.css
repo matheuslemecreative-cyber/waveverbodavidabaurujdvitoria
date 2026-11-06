@@ -1,0 +1,4655 @@
+/* WAVE — identidade roxa | Folha de estilos principal */
+
+:root {
+  --purple: #7d23ff;
+  --purple-2: #9b59ff;
+  --purple-dark: #321064;
+  --purple-deep: #17082e;
+  --bg: #090610;
+  --panel: #11101b;
+  --panel-2: #171522;
+  --line: rgba(185,139,255,.16);
+  --text: #f8f6ff;
+  --muted: #aaa3bd;
+  --green: #27df79;
+  --shadow: 0 18px 60px rgba(83,20,180,.18);
+  --header: 76px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* LUZES ROXAS — CORREÇÃO DE LARGURA */
+
+
+/* =====================================
+   WAVE — ILUMINAÇÃO ROXA DO AMBIENTE
+   ===================================== */
+
+
+/* ========================================
+   WAVE — AMBIENTE ROXO RESPONSIVO
+   ======================================== */
+
+.ambient {
+    position: absolute;
+    pointer-events: none;
+    width: min(440px, 90vw);
+    height: min(440px, 90vw);
+    border-radius: 50%;
+    background: transparent;
+    filter: blur(95px);
+    opacity: 0.16;
+    z-index: -1;
+}
+
+.ambient-one {
+    top: 120px;
+    left: 4%;
+    background: #7d23ff;
+}
+
+.ambient-two {
+    top: 1800px;
+    right: 3%;
+    background: #4b0caa;
+}
+
+
+.site-header {
+  height: var(--header);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9,6,16,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.nav-wrap {
+  height: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 25px;
+  letter-spacing: -3px;
+  color: var(--purple);
+  transform: skew(-8deg);
+  text-shadow: 0 0 22px rgba(125,35,255,.35);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px,1.45vw,23px);
+}
+
+.main-nav > a:not(.nav-cta) {
+  font-size: 12px;
+  color: #c5bfd1;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.main-nav > a:hover {
+  color: #fff;
+}
+
+.social-link {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #34303e;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px !important;
+  background: #171420;
+}
+
+.nav-cta {
+  background: var(--purple);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 0 22px rgba(125,35,255,.28);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 3px;
+}
+
+.section {
+  padding: 112px 24px;
+  position: relative;
+}
+
+.section-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size: 34px 34px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 670px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 24px 70px;
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 35% 30%,rgba(99,27,220,.24),transparent 36%),
+    radial-gradient(ellipse at 72% 76%,rgba(125,35,255,.16),transparent 34%);
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9,6,16,.4),
+    transparent 30%,
+    transparent 70%,
+    rgba(9,6,16,.4)
+  );
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(170,112,255,.32);
+  background: rgba(91,30,165,.13);
+  border-radius: 100px;
+  color: #cbaaff;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.eyebrow i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple-2);
+  box-shadow: 0 0 12px var(--purple);
+}
+
+.hero h1,
+.section-heading h2,
+.about-copy h2,
+.shirt-copy h2,
+.community-panel h2,
+.contact-info h2 {
+  font-family: "Orbitron","Inter",sans-serif;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+}
+
+.hero h1 {
+  font-size: clamp(42px,6.2vw,76px);
+  margin: 25px 0 18px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.about-copy h2 span,
+.shirt-copy h2 span,
+.community-panel h2 span {
+  background: linear-gradient(95deg,#c8a8ff 0%,#9b59ff 52%,#6715e7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content > p {
+  max-width: 610px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* BOTÕES */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  transition: transform .2s,box-shadow .2s,background .2s;
+  min-height: 44px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-primary {
+  color: #fff;
+  background: linear-gradient(110deg,#8734ff,#5b12d5);
+  box-shadow: 0 8px 25px rgba(106,27,225,.28);
+}
+
+.button-primary:hover {
+  box-shadow: 0 10px 32px rgba(125,35,255,.45);
+}
+
+.button-outline {
+  background: #15131d;
+  border-color: #34303d;
+  color: #f2eff8;
+}
+
+.button-whatsapp,
+.button-green {
+  background: var(--green);
+  color: #07150d;
+  box-shadow: 0 8px 25px rgba(39,223,121,.17);
+}
+
+/* CONTAGEM REGRESSIVA */
+
+.countdown-card {
+  max-width: 530px;
+  margin: 38px auto 0;
+  padding: 17px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(153,91,255,.24);
+  border-radius: 16px;
+  background: rgba(18,15,29,.84);
+  box-shadow: var(--shadow);
+}
+
+.countdown-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.bolt {
+  font-size: 29px;
+  color: #c09aff;
+}
+
+.countdown-label small,
+.countdown small {
+  display: block;
+  color: #91889f;
+  font-size: 9px;
+}
+
+.countdown-label strong {
+  font-size: 13px;
+}
+
+.countdown {
+  display: flex;
+  gap: 18px;
+}
+
+.countdown > div {
+  text-align: center;
+}
+
+.countdown strong {
+  font: 800 21px "Orbitron";
+  color: #c8a8ff;
+  letter-spacing: 1px;
+}
+
+/* FAIXA ANIMADA */
+
+.ticker {
+  height: 42px;
+  overflow: hidden;
+  background: linear-gradient(90deg,#5413b2,#7d23ff,#4b0b9e);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  font-family: "Orbitron";
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  animation: ticker 27s linear infinite;
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-30%);
+  }
+}
+
+/* QUEM SOMOS */
+
+.about-section {
+  background: linear-gradient(180deg,#0a0711,#0d0916);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.about-copy h2 {
+  font-size: clamp(34px,4.3vw,55px);
+  margin: 22px 0;
+}
+
+.about-copy > p {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 26px;
+  color: #c6a4ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.text-link span {
+  font-size: 18px;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
+}
+
+.mini-card {
+  min-height: 160px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: linear-gradient(145deg,#151220,#100e18);
+}
+
+.mini-icon {
+  font-size: 23px;
+  color: #bd94ff;
+}
+
+.mini-card h3 {
+  font-size: 16px;
+  margin: 8px 0 5px;
+}
+
+.mini-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* CRONOGRAMA */
+
+.schedule-section {
+  background: #08060e;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.section-heading h2 {
+  font-size: clamp(29px,4vw,47px);
+  margin: 18px 0;
+}
+
+.section-heading > p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.horizontal-cards {
+  display: grid;
+  gap: 15px;
+}
+
+.schedule-cards {
+  grid-template-columns: repeat(5,minmax(0,1fr));
+}
+
+.schedule-card {
+  padding: 20px 18px;
+  min-height: 230px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px;
+  background: #0d0b14;
+  transition: .25s;
+}
+
+.schedule-card:hover {
+  border-color: var(--purple-2);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(93,28,180,.17);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.schedule-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #21143b;
+  color: #c5a1ff;
+  font-size: 19px;
+}
+
+.card-top small {
+  font-size: 9px;
+  color: #d1b5ff;
+  background: #24153e;
+  padding: 5px 9px;
+  border-radius: 20px;
+}
+
+.schedule-card h3 {
+  font-size: 14px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.schedule-card p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* DEPARTAMENTOS */
+
+.departments-section {
+  background: linear-gradient(180deg,#0b0812,#0e0918);
+}
+
+.department-cards {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  margin-bottom: 30px;
+}
+
+.department-card {
+  padding: 24px 18px 22px;
+  min-height: 220px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 17px;
+  background: linear-gradient(145deg,#171321,#100d19);
+  transition: .25s;
+}
+
+.department-card.selected {
+  border-color: #a56bff;
+  background: linear-gradient(145deg,#241344,#141020);
+  box-shadow: 0 0 30px rgba(125,35,255,.18);
+}
+
+.department-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #241442;
+  border: 1px solid #4d2b7d;
+  color: #d0b1ff;
+  font-size: 24px;
+}
+
+.department-card h3 {
+  font-size: 14px;
+  letter-spacing: .6px;
+}
+
+.department-card p {
+  font-size: 11px;
+  color: var(--muted);
+  min-height: 48px;
+  margin: 7px 0 12px;
+}
+
+.select-department {
+  border: 1px solid #3b3547;
+  background: #201c29;
+  color: #eee;
+  padding: 8px 19px;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 110px;
+}
+
+.department-card.selected .select-department {
+  background: #a66bff;
+  color: #16082b;
+  border-color: #a66bff;
+  box-shadow: 0 0 20px rgba(166,107,255,.25);
+}
+
+/* FORMULÁRIO DE INSCRIÇÃO */
+
+.signup-panel {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 28px 30px;
+  border: 1px solid rgba(155,89,255,.25);
+  border-radius: 18px;
+  background: linear-gradient(145deg,#171321,#100d19);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.signup-panel h3 {
+  font-size: 19px;
+}
+
+.selected-label {
+  font-size: 11px;
+  color: #bda0e7;
+  margin: 4px 0 18px;
+}
+
+.selected-label strong {
+  color: #c7a5ff;
+}
+
+.signup-panel input,
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #302a3b;
+  border-radius: 9px;
+  background: #1a1723;
+  color: #fff;
+  padding: 13px 15px;
+  margin-bottom: 13px;
+  outline: none;
+  font-size: 12px;
+  transition: .2s;
+}
+
+.signup-panel input:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #9b59ff;
+  box-shadow: 0 0 0 3px rgba(125,35,255,.12);
+}
+
+.signup-panel input::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #81798e;
+}
+
+.submit-button {
+  width: 100%;
+  border: 0;
+}
+
+.form-note {
+  font-size: 10px;
+  color: #938aa2;
+  margin-top: 10px;
+}
+
+/* SPOTIFY */
+
+.playlist-section {
+  padding-top: 75px;
+  padding-bottom: 85px;
+}
+
+.playlist-card {
+  max-width: 900px;
+  margin: auto;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: center;
+  border: 1px solid rgba(91,210,120,.22);
+  border-radius: 22px;
+  background: linear-gradient(115deg,#171321,#100e18);
+}
+
+.playlist-card > img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.green-eyebrow {
+  font-size: 10px;
+  color: #6eea9d;
+  font-weight: 800;
+}
+
+.playlist-copy h2 {
+  font: 800 25px "Orbitron";
+  line-height: 1.2;
+  margin: 9px 0;
+}
+
+.playlist-copy p,
+.playlist-copy li {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.playlist-copy ul {
+  list-style: none;
+  margin: 13px 0 18px;
+}
+
+.playlist-copy li {
+  margin: 5px 0;
+}
+
+.button-green {
+  padding: 13px 23px;
+}
+
+/* CAMISETA */
+
+.shirt-section {
+  background: #0a0710;
+}
+
+.shirt-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.shirt-image-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #bcbcbc;
+  aspect-ratio: 1.25;
+}
+
+.shirt-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 13px;
+  border-radius: 30px;
+  background: #7d23ff;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.shirt-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.shirt-switch button {
+  padding: 11px;
+  border-radius: 9px;
+  border: 1px solid #393342;
+  background: #17141f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.shirt-switch button.active {
+  border-color: #a56bff;
+  background: #24133f;
+}
+
+.shirt-copy h2 {
+  font-size: clamp(32px,4vw,48px);
+  margin: 18px 0;
+}
+
+.shirt-copy > p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 510px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 17px 0;
+}
+
+.check-list li {
+  font-size: 12px;
+  margin: 7px 0;
+}
+
+.check-list li:before {
+  content: "✓";
+  color: #c6a4ff;
+  font-weight: 900;
+  margin-right: 9px;
+}
+
+.price-panel {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 13px;
+  background: #14111b;
+}
+
+.price-panel small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.price-panel strong {
+  font: 800 23px "Orbitron";
+  color: #c4a0ff;
+}
+
+/* COMUNIDADE */
+
+.community-section {
+  padding-top: 85px;
+}
+
+.community-panel {
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 30px;
+  align-items: center;
+  border: 1px solid rgba(155,89,255,.25);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 85% 50%,rgba(125,35,255,.17),transparent 32%),
+    linear-gradient(115deg,#17102a,#100d19);
+}
+
+.community-panel h2 {
+  font-size: clamp(30px,4vw,44px);
+  margin: 17px 0;
+}
+
+.community-panel p {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.qr-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-area img {
+  width: min(190px,100%);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 9px solid white;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(125,35,255,.22);
+}
+
+.qr-area small {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* LOCALIZAÇÃO */
+
+.location-section {
+  background: #0b0812;
+}
+
+.location-card {
+  max-width: 700px;
+  margin: auto;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 18px;
+  border: 1px solid rgba(155,89,255,.25);
+  border-left: 4px solid var(--purple);
+  border-radius: 17px;
+  background: #151220;
+  box-shadow: var(--shadow);
+}
+
+.church-icon {
+  font-size: 36px;
+  color: #c6a4ff;
+}
+
+.location-main h3 {
+  font-size: 18px;
+}
+
+.location-badge {
+  display: inline-block;
+  background: #281744;
+  color: #d0b4ff;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 9px;
+  margin-top: 6px;
+}
+
+.location-divider {
+  height: 1px;
+  background: #302a3a;
+  margin: 18px 0;
+}
+
+.location-main p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+
+.location-main p b {
+  color: #eee;
+}
+
+.map-button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* FAQ */
+
+.faq-section {
+  background: #08060e;
+}
+
+.faq-inner {
+  max-width: 850px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 13px;
+  background: #14111d;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.faq-item.open {
+  border-color: #8d49ef;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 17px 20px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faq-question span {
+  font-size: 22px;
+  color: #bd94ff;
+  transition: transform .2s;
+}
+
+.faq-item.open .faq-question span {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .25s;
+}
+
+.faq-answer p {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item.open .faq-answer p {
+  padding: 0 20px 18px;
+}
+
+/* CONTATO */
+
+.contact-section {
+  background: linear-gradient(180deg,#0c0813,#0a0710);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: clamp(30px,3.5vw,42px);
+  margin: 20px 0;
+}
+
+.contact-info > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.contact-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  margin: 12px 0;
+  max-width: 430px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  background: #15121d;
+}
+
+.contact-tile > span {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #281744;
+  color: #c7a5ff;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.contact-tile b,
+.contact-tile small {
+  display: block;
+  font-size: 12px;
+}
+
+.contact-tile small {
+  color: #b894f3;
+}
+
+.contact-form {
+  padding: 26px;
+  border: 1px solid rgba(155,89,255,.22);
+  border-radius: 18px;
+  background: #15121e;
+}
+
+.contact-form h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .button {
+  width: 100%;
+  border: 0;
+}
+
+/* RODAPÉ */
+
+.site-footer {
+  padding: 35px 24px 18px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #08060e;
+}
+
+.footer-main {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.footer-main p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.footer-social {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #171420;
+  border: 1px solid #302a3a;
+  font-size: 18px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 18px;
+  color: #827a90;
+  font-size: 10px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #a56bff;
+  border-radius: 50%;
+  background: #7020df;
+  color: white;
+  font-size: 22px;
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: .2s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:1050px) {
+  .main-nav {
+    gap: 10px;
+  }
+
+  .main-nav > a:not(.nav-cta) {
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .schedule-cards {
+    grid-template-columns: repeat(5,220px);
+    overflow-x: auto;
+    padding: 5px 2px 18px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .schedule-card {
+    scroll-snap-align: start;
+  }
+
+  .department-cards {
+    grid-template-columns: repeat(4,220px);
+    overflow-x: auto;
+    padding: 5px 2px 18px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .department-card {
+    scroll-snap-align: start;
+  }
+}
+
+@media(max-width:780px) {
+  :root {
+    --header: 68px;
+  }
+
+  .nav-wrap {
+    padding: 0 20px;
+  }
+
+  .brand-mark {
+    font-size: 23px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: var(--header);
+    left: 0;
+    right: 0;
+    padding: 15px 22px 22px;
+    background: rgba(11,7,18,.98);
+    border-bottom: 1px solid #30243e;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .main-nav > a:not(.nav-cta) {
+    font-size: 14px;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  .main-nav .social-link {
+    display: none;
+  }
+
+  .main-nav .nav-cta {
+    text-align: center;
+    margin-top: 14px;
+    padding: 13px;
+  }
+
+  .section {
+    padding: 82px 20px;
+  }
+
+  .hero {
+    min-height: 660px;
+    padding: 75px 18px 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px,10vw,64px);
+  }
+
+  .hero-content > p {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .hero-actions .button {
+    font-size: 10px;
+    padding: 12px 13px;
+  }
+
+  .countdown-card {
+    max-width: 470px;
+    padding: 14px;
+  }
+
+  .countdown {
+    gap: 12px;
+  }
+
+  .countdown strong {
+    font-size: 17px;
+  }
+
+  .about-layout,
+  .shirt-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-layout {
+    gap: 35px;
+  }
+
+  .about-copy {
+    text-align: center;
+  }
+
+  .about-copy > p {
+    margin: auto;
+  }
+
+  .about-cards {
+    max-width: 550px;
+    margin: auto;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(27px,7vw,39px);
+  }
+
+  .schedule-cards {
+    grid-template-columns: repeat(5,235px);
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  .department-cards {
+    grid-template-columns: repeat(4,230px);
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  .playlist-card {
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .playlist-copy h2 {
+    font-size: 20px;
+  }
+
+  .shirt-layout {
+    gap: 30px;
+  }
+
+  .shirt-image-wrap {
+    max-height: 500px;
+  }
+
+  .shirt-copy {
+    text-align: center;
+  }
+
+  .shirt-copy > p {
+    margin: auto;
+  }
+
+  .check-list {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .price-panel {
+    justify-content: center;
+  }
+
+  .community-panel {
+    padding: 28px;
+    grid-template-columns: 1fr 180px;
+  }
+
+  .community-panel > div:first-child {
+    text-align: left;
+  }
+
+  .location-card {
+    max-width: 650px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-tile {
+    margin: 12px auto;
+    text-align: left;
+  }
+
+  .footer-main {
+    flex-wrap: wrap;
+  }
+
+  .footer-social {
+    margin-left: auto;
+  }
+}
+
+@media(max-width:520px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding: 62px 15px 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px,10.5vw,51px);
+    letter-spacing: -1px;
+  }
+
+  .hero-content > p {
+    font-size: 12px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 310px;
+    margin: 24px auto 0;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .countdown-card {
+    display: block;
+    margin-top: 25px;
+    padding: 14px;
+  }
+
+  .countdown-label {
+    justify-content: center;
+  }
+
+  .countdown {
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .ticker {
+    height: 36px;
+  }
+
+  .ticker-track {
+    font-size: 10px;
+  }
+
+  .about-copy h2 {
+    font-size: 34px;
+  }
+
+  .about-cards {
+    gap: 10px;
+  }
+
+  .mini-card {
+    padding: 16px;
+    min-height: 155px;
+  }
+
+  .mini-card h3 {
+    font-size: 14px;
+  }
+
+  .mini-card p {
+    font-size: 11px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading > p {
+    font-size: 12px;
+  }
+
+  .schedule-cards {
+    grid-template-columns: repeat(5,82vw);
+  }
+
+  .schedule-card {
+    min-height: 210px;
+  }
+
+  .department-cards {
+    grid-template-columns: repeat(4,78vw);
+  }
+
+  .department-card {
+    min-height: 215px;
+  }
+
+  .signup-panel {
+    padding: 23px 17px;
+  }
+
+  .signup-panel h3 {
+    font-size: 17px;
+  }
+
+  .playlist-card {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .playlist-card > img {
+    max-width: 220px;
+    margin: auto;
+  }
+
+  .playlist-copy {
+    text-align: center;
+  }
+
+  .playlist-copy h2 {
+    font-size: 20px;
+  }
+
+  .playlist-copy ul {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .shirt-copy h2 {
+    font-size: 35px;
+  }
+
+  .price-panel {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-panel > div {
+    text-align: center;
+  }
+
+  .price-panel .button {
+    width: 100%;
+  }
+
+  .community-panel {
+    grid-template-columns: 1fr;
+    padding: 24px 19px;
+    text-align: center;
+  }
+
+  .community-panel > div:first-child {
+    text-align: center;
+  }
+
+  .community-panel p {
+    font-size: 12px;
+  }
+
+  .community-panel .button {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .qr-area img {
+    width: 155px;
+  }
+
+  .location-card {
+    grid-template-columns: 1fr;
+    padding: 22px 18px;
+  }
+
+  .church-icon {
+    font-size: 29px;
+  }
+
+  .location-main h3 {
+    font-size: 16px;
+  }
+
+  .location-main p {
+    font-size: 11px;
+  }
+
+  .faq-question {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .contact-layout {
+    gap: 30px;
+  }
+
+  .contact-info h2 {
+    font-size: 30px;
+  }
+
+  .contact-form {
+    padding: 20px 16px;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .footer-main p {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+
+  .footer-social {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer-bottom {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *:before,
+  *:after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* =========================================================
+   WAVE — REFINO VISUAL, TIPOGRAFIA, ÍCONES E MICROINTERAÇÕES
+   ========================================================= */
+
+:root {
+  --purple: #7d23ff;
+  --purple-2: #a66bff;
+  --purple-dark: #351064;
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  cursor: default;
+}
+
+h1, h2, h3, .brand-mark, .countdown strong, .playlist-copy h2 {
+  font-family: var(--font-display);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6.8vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+  text-shadow: 0 8px 40px rgba(125,35,255,.14);
+}
+
+.hero-content > p,
+.about-copy > p,
+.section-heading > p,
+.community-panel p,
+.shirt-copy > p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.section-heading h2,
+.about-copy h2,
+.shirt-copy h2,
+.community-panel h2,
+.contact-info h2 {
+  letter-spacing: -1.1px;
+}
+
+.main-nav > a:not(.nav-cta) {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-cta {
+  font-size: 13px;
+  padding: 13px 20px;
+  border-radius: 10px;
+}
+
+.button {
+  min-height: 50px;
+  padding: 15px 23px;
+  font-size: 13px;
+  letter-spacing: .15px;
+  border-radius: 11px;
+}
+
+.button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.hero-actions .button {
+  min-height: 54px;
+  padding: 16px 22px;
+}
+
+.mini-card h3,
+.schedule-card h3,
+.department-card h3 {
+  font-size: 16px;
+}
+
+.mini-card p,
+.schedule-card p,
+.department-card p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.schedule-card {
+  padding: 23px 20px;
+}
+
+.schedule-card p {
+  font-size: 13px;
+}
+
+.department-card {
+  padding: 27px 20px 24px;
+}
+
+.department-card p {
+  font-size: 12px;
+}
+
+.select-department {
+  padding: 10px 20px;
+  font-size: 11px;
+}
+
+.signup-panel h3,
+.contact-form h3 {
+  font-size: 21px;
+}
+
+.signup-panel input,
+.contact-form input,
+.contact-form textarea {
+  min-height: 49px;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.faq-question {
+  font-size: 15px;
+  padding: 20px 22px;
+}
+
+.faq-answer p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.contact-tile b {
+  font-size: 14px;
+}
+
+.contact-tile small {
+  font-size: 12px;
+}
+
+.footer-main p {
+  font-size: 13px;
+}
+
+/* ÍCONES SVG */
+
+.icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+.icon-svg svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+.social-link .icon-svg svg {
+  width: 19px;
+  height: 19px;
+}
+
+.social-link {
+  color: #d9c5ff;
+  transition: transform .25s ease, background .25s ease, color .25s ease;
+}
+
+.social-link:hover {
+  color: white;
+  background: #6320bd;
+  transform: translateY(-3px) rotate(-5deg);
+}
+
+.mini-icon svg,
+.schedule-icon svg,
+.department-icon svg,
+.church-icon svg,
+.bolt svg {
+  width: 25px;
+  height: 25px;
+}
+
+.mini-icon,
+.schedule-icon,
+.department-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover,
+.nav-cta:hover,
+.select-department:hover,
+.shirt-switch button:hover {
+  filter: brightness(1.12);
+}
+
+.button:active,
+.nav-cta:active,
+.select-department:active {
+  transform: translateY(0) scale(.98);
+}
+
+/* LUZ ROXA QUE SEGUE O PONTEIRO */
+
+.cursor-glow {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(139,65,255,.16) 0%,
+    rgba(125,35,255,.075) 32%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  transition: opacity .25s ease;
+  will-change: left, top;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body:hover .cursor-glow {
+    opacity: 1;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* ANIMAÇÕES DE ENTRADA */
+
+.js-reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(.985);
+  filter: blur(4px);
+  transition:
+    opacity .75s cubic-bezier(.2,.7,.2,1),
+    transform .75s cubic-bezier(.2,.7,.2,1),
+    filter .75s ease;
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.hero-content > * {
+  animation: hero-enter .85s both cubic-bezier(.2,.7,.2,1);
+}
+
+.hero-content > *:nth-child(1) {
+  animation-delay: .08s;
+}
+
+.hero-content > *:nth-child(2) {
+  animation-delay: .18s;
+}
+
+.hero-content > *:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.hero-content > *:nth-child(4) {
+  animation-delay: .42s;
+}
+
+.hero-content > *:nth-child(5) {
+  animation-delay: .54s;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* EFEITOS DOS CARDS */
+
+.mini-card,
+.schedule-card,
+.department-card,
+.playlist-card,
+.location-card,
+.contact-tile,
+.faq-item,
+.signup-panel,
+.community-panel,
+.shirt-image-wrap {
+  transition:
+    transform .35s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    box-shadow .35s ease,
+    background .3s ease;
+}
+
+.mini-card:hover,
+.schedule-card:hover,
+.department-card:hover,
+.contact-tile:hover {
+  transform: translateY(-7px);
+  border-color: rgba(166,107,255,.62);
+  box-shadow: 0 18px 42px rgba(91,24,176,.2);
+}
+
+.playlist-card:hover,
+.community-panel:hover,
+.location-card:hover {
+  box-shadow: 0 22px 60px rgba(91,24,176,.17);
+}
+
+.shirt-image-wrap:hover img {
+  transform: scale(1.035);
+}
+
+.shirt-image-wrap img {
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.ticker-track {
+  will-change: transform;
+}
+
+/* BRILHO DOS BOTÕES */
+
+.button-primary,
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-primary::after,
+.nav-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.2),
+    transparent
+  );
+  transition: transform .65s ease;
+}
+
+.button-primary:hover::after,
+.nav-cta:hover::after {
+  transform: translateX(120%) skewX(-20deg);
+}
+
+.back-to-top {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 8px 28px rgba(125,35,255,.35);
+}
+
+/* AJUSTES PARA TELAS MENORES */
+
+@media (max-width: 1050px) {
+  .main-nav > a:not(.nav-cta) {
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    font-size: 11px;
+    padding: 11px 14px;
+  }
+}
+
+@media (max-width: 780px) {
+  body {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px,9.5vw,66px);
+  }
+
+  .hero-content > p,
+  .about-copy > p,
+  .section-heading > p,
+  .community-panel p,
+  .shirt-copy > p {
+    font-size: 14px;
+  }
+
+  .button {
+    min-height: 50px;
+    font-size: 12px;
+    padding: 14px 18px;
+  }
+
+  .hero-actions .button {
+    min-height: 52px;
+    font-size: 11px;
+  }
+
+  .main-nav > a:not(.nav-cta) {
+    font-size: 15px;
+  }
+
+  .mini-card h3,
+  .schedule-card h3,
+  .department-card h3 {
+    font-size: 15px;
+  }
+
+  .mini-card p,
+  .schedule-card p,
+  .department-card p {
+    font-size: 12px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 18px;
+  }
+
+  .faq-answer p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: clamp(37px,10vw,51px);
+  }
+
+  .hero-content > p {
+    font-size: 13px;
+  }
+
+  .hero-actions .button {
+    font-size: 11px;
+  }
+
+  .mini-card p,
+  .schedule-card p,
+  .department-card p {
+    font-size: 12px;
+  }
+
+  .signup-panel input,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+  }
+
+  .footer-main p {
+    font-size: 12px;
+  }
+}
+
+/* ACESSIBILIDADE: RESPEITA PREFERÊNCIA POR MENOS MOVIMENTO */
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal,
+  .hero-content > *,
+  .cursor-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* =================================
+   HERO — CARDS FLUTUANTES
+================================= */
+
+.hero-floating-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 32px auto 8px;
+    max-width: 850px;
+}
+
+.hero-float-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 19px;
+    min-height: 76px;
+    background: rgba(25, 15, 43, .88);
+    border: 1px solid rgba(166, 107, 255, .35);
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(85, 25, 170, .15);
+    backdrop-filter: blur(12px);
+    animation: floating-wave 4s ease-in-out infinite;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.hero-float-card:hover {
+    border-color: #b98aff;
+    box-shadow: 0 12px 35px rgba(125, 35, 255, .28);
+}
+
+.hero-float-card strong,
+.hero-float-card span {
+    display: block;
+}
+
+.hero-float-card strong {
+    color: #d6baff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 3px;
+}
+
+.hero-float-card div span {
+    color: #c2b7d3;
+    font-size: 11px;
+}
+
+.float-icon {
+    display: grid !important;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 11px;
+    background: rgba(125, 35, 255, .2);
+    color: #d2b3ff;
+    font-size: 23px;
+}
+
+.float-two {
+    animation-delay: .6s;
+}
+
+.float-three {
+    animation-delay: 1.2s;
+}
+
+@keyframes floating-wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@media(max-width: 780px) {
+    .hero-floating-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        gap: 10px;
+        margin-top: 25px;
+    }
+
+    .hero-float-card {
+        min-height: 65px;
+        padding: 11px 15px;
+    }
+
+    .hero-float-card strong {
+        font-size: 15px;
+    }
+
+    .hero-float-card div span {
+        font-size: 12px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    .hero-float-card {
+        animation: none;
+    }
+}
+
+.cursor-glow {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(155, 89, 255, .24) 0%,
+        rgba(125, 35, 255, .14) 32%,
+        rgba(125, 35, 255, .045) 58%,
+        transparent 75%
+    );
+
+    mix-blend-mode: screen;
+    transition: opacity .2s ease;
+    will-change: left, top;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body:hover .cursor-glow {
+        opacity: 1;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .cursor-glow {
+        display: none;
+    }
+}
+
+/* =================================
+   WAVE — AUMENTO GERAL DA TIPOGRAFIA
+================================= */
+
+/* Textos gerais */
+body {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Títulos principais */
+.hero h1 {
+    font-size: clamp(52px, 7vw, 90px);
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 4.5vw, 53px);
+}
+
+.about-copy h2,
+.shirt-copy h2 {
+    font-size: clamp(39px, 4.5vw, 57px);
+}
+
+.community-panel h2 {
+    font-size: clamp(36px, 4.5vw, 50px);
+}
+
+/* Textos das seções */
+.hero-content > p,
+.about-copy > p,
+.section-heading > p,
+.community-panel p,
+.shirt-copy > p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Cards */
+.mini-card h3,
+.schedule-card h3,
+.department-card h3 {
+    font-size: 17px;
+}
+
+.mini-card p,
+.schedule-card p,
+.department-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Botões */
+.button {
+    font-size: 14px;
+    min-height: 53px;
+    padding: 16px 25px;
+}
+
+/* Formulários */
+.signup-panel h3,
+.contact-form h3 {
+    font-size: 23px;
+}
+
+.signup-panel input,
+.contact-form input,
+.contact-form textarea {
+    font-size: 15px;
+    min-height: 52px;
+}
+
+/* Perguntas frequentes */
+.faq-question {
+    font-size: 16px;
+}
+
+.faq-answer p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Menu */
+.main-nav > a:not(.nav-cta) {
+    font-size: 14px;
+}
+
+.nav-cta {
+    font-size: 14px;
+}
+
+/* Ajustes para celular */
+@media(max-width: 780px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 10vw, 60px);
+    }
+
+    .section-heading h2 {
+        font-size: clamp(31px, 7vw, 42px);
+    }
+
+    .about-copy h2,
+    .shirt-copy h2 {
+        font-size: clamp(33px, 8vw, 43px);
+    }
+
+    .hero-content > p,
+    .about-copy > p,
+    .section-heading > p,
+    .community-panel p,
+    .shirt-copy > p {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 13px;
+        min-height: 51px;
+    }
+
+    .mini-card h3,
+    .schedule-card h3,
+    .department-card h3 {
+        font-size: 16px;
+    }
+
+    .mini-card p,
+    .schedule-card p,
+    .department-card p {
+        font-size: 13px;
+    }
+
+    .faq-question {
+        font-size: 14px;
+    }
+}
+
+/* CARD INTEIRO CLICÁVEL */
+
+.department-card {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.department-card:focus-visible {
+    outline: 2px solid #b98aff;
+    outline-offset: 4px;
+}
+
+.department-card:active {
+    transform: scale(.98);
+}
+
+.department-card .select-department {
+    pointer-events: none;
+}
+
+
+/* =========================================
+   WAVE - AJUSTE EXCLUSIVO DO CRONÔMETRO
+========================================= */
+
+/* Caixa principal */
+.countdown-card {
+    padding: 24px 30px;
+    gap: 24px;
+    min-height: 112px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Identificação do próximo culto */
+.countdown-label {
+    gap: 14px;
+    min-width: 0;
+}
+
+/* Texto "PRÓXIMO CULTO WAVE" */
+.countdown-label > div > span {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Texto "Sábado, às 19h30" */
+#nextServiceText {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* Área dos quatro números */
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* Números do cronômetro */
+#days,
+#hours,
+#minutes,
+#seconds {
+    display: inline-block;
+    font-size: 27px !important;
+    line-height: 1.15 !important;
+    font-weight: 900;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    min-width: 2ch;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Legendas DIAS, HORAS, MIN e SEG */
+.countdown > div {
+    min-width: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.countdown > div small {
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVIDADE DO CRONÔMETRO
+========================================= */
+
+@media (max-width: 600px) {
+
+    .countdown-card {
+        padding: 20px 16px;
+        gap: 18px;
+        min-height: auto;
+        flex-wrap: wrap;
+    }
+
+    .countdown-label {
+        width: 100%;
+    }
+
+    .countdown {
+        width: 100%;
+        justify-content: space-around;
+        gap: 8px;
+    }
+
+    #days,
+    #hours,
+    #minutes,
+    #seconds {
+        font-size: 25px !important;
+    }
+
+    .countdown > div {
+        min-width: 38px;
+    }
+
+    .countdown > div small {
+        font-size: 10px;
+    }
+
+    #nextServiceText {
+        font-size: 15px;
+    }
+}
+
+
+/* ================================================
+   WAVE — AJUSTES PONTUAIS DE TIPOGRAFIA
+   Não altera a tipografia global do site.
+================================================ */
+
+/* 1. LOCALIZAÇÃO */
+
+.location-card h3 {
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.location-card p,
+.location-card strong,
+.location-card .location-address,
+.location-card .location-hours {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* 2. CAMISETA WAVE */
+
+.shirt-copy > p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.shirt-copy li,
+.shirt-copy ul li {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.shirt-copy .price {
+    font-size: 29px;
+}
+
+.shirt-copy .price-label {
+    font-size: 13px;
+}
+
+/* Botões de visualização */
+
+.shirt-switch button {
+    font-size: 15px;
+    min-height: 54px;
+}
+
+/* 3. PROGRAMAÇÃO DOS CULTOS */
+
+.schedule-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.schedule-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.schedule-card .time,
+.schedule-card .schedule-time {
+    font-size: 12px;
+}
+
+/* 4. DEPARTAMENTOS */
+
+.department-card h3 {
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.department-card p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* 5. INSCRIÇÃO */
+
+#selectedDepartment,
+#signupFeedback {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* 6. PLAYLIST SPOTIFY */
+
+.playlist-card h2 {
+    font-size: 38px;
+    line-height: 1.25;
+}
+
+.playlist-card p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.playlist-card li {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 7. CARDS FLUTUANTES DO HERO */
+
+.hero-float-card strong {
+    font-size: 19px;
+}
+
+.hero-float-card div span {
+    font-size: 13px;
+}
+
+/* ================================================
+   AJUSTES PARA CELULAR
+================================================ */
+
+@media (max-width: 780px) {
+
+    /* Localização */
+    .location-card h3 {
+        font-size: 21px;
+    }
+
+    .location-card p,
+    .location-card strong,
+    .location-card .location-address,
+    .location-card .location-hours {
+        font-size: 14px;
+    }
+
+    /* Camiseta */
+    .shirt-copy > p {
+        font-size: 15px;
+    }
+
+    .shirt-copy li,
+    .shirt-copy ul li {
+        font-size: 14px;
+    }
+
+    .shirt-copy .price {
+        font-size: 26px;
+    }
+
+    .shirt-switch button {
+        font-size: 13px;
+    }
+
+    /* Programação */
+    .schedule-card h3 {
+        font-size: 16px;
+    }
+
+    .schedule-card p {
+        font-size: 13px;
+    }
+
+    .schedule-card .time,
+    .schedule-card .schedule-time {
+        font-size: 11px;
+    }
+
+    /* Departamentos */
+    .department-card h3 {
+        font-size: 17px;
+    }
+
+    .department-card p {
+        font-size: 13px;
+    }
+
+    /* Playlist */
+    .playlist-card h2 {
+        font-size: 30px;
+    }
+
+    .playlist-card p {
+        font-size: 14px;
+    }
+
+    .playlist-card li {
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .hero-float-card strong {
+        font-size: 17px;
+    }
+
+    .hero-float-card div span {
+        font-size: 12px;
+    }
+
+}
+
+
+/* BOTÃO — ENCONTRE SEU LUGAR NO WAVE */
+
+.about-copy a,
+.about-copy .button,
+.about-copy .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 16px 27px;
+    min-height: 54px;
+
+    background: linear-gradient(135deg, #922eff, #6412db);
+    color: #ffffff !important;
+
+    border: 1px solid rgba(190, 145, 255, 0.4);
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+
+    box-shadow: 0 8px 25px rgba(120, 35, 230, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.about-copy a:hover,
+.about-copy .button:hover,
+.about-copy .btn:hover {
+    background: linear-gradient(135deg, #a64aff, #7824ed);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(140, 55, 255, 0.4);
+}
+
+@media (max-width: 780px) {
+    .about-copy a,
+    .about-copy .button,
+    .about-copy .btn {
+        min-height: 52px;
+        padding: 14px 22px;
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   WAVE — BOXES DE IDENTIFICAÇÃO DAS SEÇÕES
+========================================== */
+
+/* Etiquetas e identificadores */
+.section-heading > span,
+.section-heading .eyebrow,
+.hero-badge,
+.hero-tag,
+.hero-content .badge,
+.shirt-copy .store-tag,
+.shirt-copy .eyebrow,
+.playlist-card .playlist-tag,
+.playlist-card .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 11px 20px;
+
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 1px;
+
+    border-radius: 50px;
+
+    box-sizing: border-box;
+}
+
+/* Identificação do próximo culto no Hero */
+.hero-content .hero-badge,
+.hero-content .hero-tag {
+    padding: 12px 22px;
+    font-size: 14px;
+}
+
+/* Etiquetas das demais seções */
+.section-heading > span,
+.section-heading .eyebrow {
+    padding: 12px 22px;
+    font-size: 14px;
+}
+
+/* Wave Store */
+.shirt-copy .store-tag,
+.shirt-copy .eyebrow {
+    padding: 11px 21px;
+    font-size: 14px;
+}
+
+/* Playlist */
+.playlist-card .playlist-tag,
+.playlist-card .eyebrow {
+    padding: 11px 21px;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse */
+.section-heading > span:hover,
+.section-heading .eyebrow:hover,
+.hero-badge:hover,
+.hero-tag:hover {
+    border-color: rgba(180, 125, 255, .7);
+    transition: border-color .3s ease;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 780px) {
+
+    .section-heading > span,
+    .section-heading .eyebrow,
+    .hero-badge,
+    .hero-tag,
+    .hero-content .badge,
+    .shirt-copy .store-tag,
+    .shirt-copy .eyebrow,
+    .playlist-card .playlist-tag,
+    .playlist-card .eyebrow {
+        padding: 10px 16px;
+        font-size: 12px;
+        letter-spacing: .7px;
+    }
+
+}
+
+
+/* =====================================
+   WAVE — BOXES QUE FALTARAM
+===================================== */
+
+/* Todos os sábados, às 19h30 */
+.hero-content .hero-info,
+.hero-content .hero-location,
+.hero-content .hero-schedule,
+.hero-content .location-badge,
+
+/* Quem somos */
+.about-copy .eyebrow,
+.about-copy .section-tag,
+.about-copy .about-tag,
+
+/* Comunidade WAVE */
+.community-panel .eyebrow,
+.community-panel .section-tag,
+.community-panel .community-tag,
+
+/* Fale com a gente */
+.contact-layout .eyebrow,
+.contact-layout .section-tag,
+.contact-layout .contact-tag,
+.contact-form .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+/* Celulares */
+@media (max-width: 780px) {
+    .hero-content .hero-info,
+    .hero-content .hero-location,
+    .hero-content .hero-schedule,
+    .hero-content .location-badge,
+    .about-copy .eyebrow,
+    .about-copy .section-tag,
+    .about-copy .about-tag,
+    .community-panel .eyebrow,
+    .community-panel .section-tag,
+    .community-panel .community-tag,
+    .contact-layout .eyebrow,
+    .contact-layout .section-tag,
+    .contact-layout .contact-tag,
+    .contact-form .eyebrow {
+        padding: 10px 16px;
+        font-size: 12px;
+        letter-spacing: .7px;
+    }
+}
+
+
+/* ONDE ESTAMOS — CENTRALIZAÇÃO */
+.location-card {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centraliza o conteúdo interno */
+.location-card > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ETIQUETA UNIDADE JARDIM VITÓRIA */
+.location-card .location-badge {
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 20px;
+    line-height: 1.4;
+}
+
+
+/* BOX DO TOPO — TODOS OS SÁBADOS */
+.hero-content > .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    max-width: 100%;
+    padding: 14px 24px;
+
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 1px;
+
+    border-radius: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* AJUSTE PARA CELULARES */
+@media (max-width: 780px) {
+    .hero-content > .eyebrow {
+        padding: 12px 18px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+/* FAIXA ROXA — MOVIMENTO INFINITO */
+.ticker {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    max-width: none;
+    gap: 0;
+    animation: waveTickerInfinite 16s linear infinite;
+    will-change: transform;
+}
+
+.ticker-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: max-content;
+    gap: 28px;
+    padding-right: 28px;
+    white-space: nowrap;
+}
+
+.ticker-content span {
+    flex-shrink: 0;
+}
+
+@keyframes waveTickerInfinite {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* MAIS RÁPIDO EM TELAS PEQUENAS */
+@media (max-width: 780px) {
+    .ticker-track {
+        animation-duration: 13s;
+    }
+
+    .ticker-content {
+        gap: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+/* PROGRAMAÇÃO DE SÁBADO — HORÁRIOS */
+.schedule-card .card-top small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 14px;
+
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+
+    border-radius: 50px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* AJUSTE PARA CELULARES */
+@media (max-width: 780px) {
+    .schedule-card .card-top small {
+        padding: 8px 12px;
+        font-size: 11px;
+        font-weight: 800;
+    }
+}
+
+
+/* DEPARTAMENTO SELECIONADO — COMPACTO */
+
+.signup-panel .selected-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 12px auto 20px;
+    padding: 9px 15px;
+
+    background: rgba(124, 35, 255, 0.13);
+    border: 1px solid rgba(167, 104, 255, 0.35);
+    border-radius: 10px;
+
+    color: #d9c1ff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* ÍCONE DE CONFIRMAÇÃO */
+.signup-panel .selected-label::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    background: #8128ff;
+    border-radius: 50%;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* NOME DO DEPARTAMENTO */
+.signup-panel #selectedDepartment {
+    display: inline-block;
+    padding: 4px 9px;
+
+    background: #7621e8;
+    border-radius: 6px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* CELULARES */
+@media (max-width: 780px) {
+    .signup-panel .selected-label {
+        padding: 8px 11px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .signup-panel #selectedDepartment {
+        padding: 3px 8px;
+        font-size: 12px;
+    }
+}
+
+
+/* FALE COM A GENTE — TEXTO ABAIXO DO TÍTULO */
+.contact-info > p {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* AJUSTE PARA CELULARES */
+@media (max-width: 780px) {
+    .contact-info > p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+
+/* ONDE ESTAMOS — ALINHAMENTO DOS ÍCONES */
+
+.location-main p b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    vertical-align: middle;
+}
+
+/* CENTRALIZA OS ÍCONES COM OS TEXTOS */
+.location-main p b .icon-svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+/* AJUSTA O SVG INTERNAMENTE */
+.location-main p b .icon-svg svg {
+    display: block;
+    vertical-align: middle;
+}
+
+
+/* ===================================== */
+/* WAVE — NOVO BLOCO SPOTIFY             */
+/* ===================================== */
+
+.playlist-card.wave-music-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 55px;
+
+    width: 100%;
+    padding: 55px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 25% 50%,
+            rgba(117, 35, 220, 0.18),
+            transparent 55%
+        ),
+        linear-gradient(135deg, #181020, #0d0a13);
+
+    border: 1px solid rgba(166, 104, 255, 0.22);
+    border-radius: 26px;
+    box-sizing: border-box;
+}
+
+.wave-music-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a45cff,
+        transparent
+    );
+}
+
+/* ÁREA VISUAL */
+
+.wave-music-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+
+.wave-music-cover {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1;
+
+    padding: 25px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(174, 99, 255, 0.45),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #6d19dc,
+            #260b49 65%,
+            #100a1b
+        );
+
+    border: 1px solid rgba(213, 174, 255, 0.25);
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.35),
+        0 0 55px rgba(127, 35, 255, 0.12);
+
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+.wave-music-cover:hover {
+    transform: rotate(0deg) scale(1.025);
+}
+
+.music-cover-top,
+.music-cover-bottom {
+    position: relative;
+    z-index: 2;
+
+    color: #e8d8ff;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.music-cover-bottom {
+    font-size: 9px;
+}
+
+.music-cover-center {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.music-cover-symbol {
+    color: #c69bff;
+    font-size: 45px;
+}
+
+.music-cover-center strong {
+    color: #ffffff;
+    font-family: Orbitron, sans-serif;
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 1.1;
+}
+
+.music-cover-center > span:last-child {
+    color: #e4d1ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* ONDAS MUSICAIS */
+
+.music-cover-bars {
+    position: absolute;
+    inset: auto 18px 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    height: 50px;
+    opacity: 0.45;
+}
+
+.music-cover-bars i {
+    display: block;
+    width: 5px;
+    height: 18px;
+
+    background: #cda8ff;
+    border-radius: 10px;
+
+    animation: waveMusicBars 1.3s ease-in-out infinite alternate;
+}
+
+.music-cover-bars i:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+.music-cover-bars i:nth-child(4n) {
+    animation-delay: 0.5s;
+}
+
+.music-cover-bars i:nth-child(5n) {
+    animation-delay: 0.8s;
+}
+
+@keyframes waveMusicBars {
+    from {
+        height: 8px;
+    }
+
+    to {
+        height: 38px;
+    }
+}
+
+/* LEGENDA DA CAPA */
+
+.wave-music-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: #b7a8c9;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-align: center;
+}
+
+.music-live-dot {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 7px;
+    height: 7px;
+
+    background: #1ed760;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(30, 215, 96, 0.5);
+}
+
+/* INFORMAÇÕES */
+
+.wave-music-card .wave-music-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+.wave-music-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 15px;
+    margin-bottom: 22px;
+
+    background: rgba(30, 215, 96, 0.08);
+    border: 1px solid rgba(30, 215, 96, 0.25);
+    border-radius: 50px;
+
+    color: #72eda1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.wave-music-card .wave-music-info h2 {
+    margin: 0 0 22px;
+
+    color: #f6f1ff;
+    font-family: Orbitron, sans-serif;
+    font-size: clamp(27px, 3.2vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.wave-music-card .wave-music-info h2 span {
+    color: #b87aff;
+}
+
+.wave-music-card .wave-music-info p {
+    max-width: 550px;
+    margin: 0 0 25px;
+
+    color: #b5aabd;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* DESTAQUES */
+
+.wave-music-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.wave-music-features span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 10px 14px;
+
+    background: rgba(167, 106, 255, 0.08);
+    border: 1px solid rgba(167, 106, 255, 0.18);
+    border-radius: 9px;
+
+    color: #d3b9ff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* BOTÃO SPOTIFY */
+
+.wave-music-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+}
+
+.wave-music-card .wave-spotify-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 17px 23px;
+
+    background: #1ed760;
+    border-radius: 12px;
+
+    color: #07130d;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.wave-spotify-button svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+}
+
+.wave-music-card .wave-spotify-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(30, 215, 96, 0.2);
+}
+
+.wave-music-footer-note {
+    color: #847b90;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .playlist-card.wave-music-card {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 35px 25px;
+    }
+
+    .wave-music-cover {
+        max-width: 290px;
+    }
+
+    .wave-music-card .wave-music-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .wave-music-features,
+    .wave-music-footer {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .playlist-card.wave-music-card {
+        padding: 28px 18px;
+        border-radius: 18px;
+    }
+
+    .wave-music-cover {
+        max-width: 245px;
+        padding: 20px;
+    }
+
+    .music-cover-center strong {
+        font-size: 46px;
+    }
+
+    .wave-music-card .wave-music-info h2 {
+        font-size: 27px;
+    }
+
+    .wave-music-card .wave-music-info p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .wave-music-footer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .wave-music-card .wave-spotify-button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .music-cover-bars i {
+        animation: none;
+    }
+}
+
+
+/* ===================================== */
+/* PLAYLIST WAVE — SELO EXTERNO          */
+/* ===================================== */
+
+.wave-playlist-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.wave-playlist-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 25px;
+
+    background: rgba(125, 35, 255, 0.09);
+    border: 1px solid rgba(174, 103, 255, 0.45);
+    border-radius: 50px;
+
+    color: #d2afff;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* REMOVE ESPAÇAMENTO DO SELO ANTIGO */
+.wave-music-card .wave-music-info {
+    padding-top: 0;
+}
+
+/* CORRIGE O ÍCONE DO SPOTIFY */
+.wave-music-card .wave-spotify-button svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: #07130d;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 780px) {
+
+    .wave-playlist-heading {
+        margin-bottom: 25px;
+    }
+
+    .wave-playlist-tag {
+        padding: 11px 19px;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+    }
+}
+
+
+/* ===================================== */
+/* WAVE SPOTIFY — AJUSTES FINAIS         */
+/* ===================================== */
+
+/* BOTÃO MAIS CURTO E LEGENDA ABAIXO */
+.wave-music-card .wave-music-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.wave-music-card .wave-spotify-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    max-width: 100%;
+    padding: 15px 19px;
+
+    font-size: 13px;
+    font-weight: 900;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.wave-music-card .wave-spotify-button svg {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+}
+
+/* LEGENDA CENTRALIZADA ABAIXO DO BOTÃO */
+.wave-music-card .wave-music-footer-note {
+    display: block;
+    width: 100%;
+
+    color: #958a9f;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* BOXES DE DESTAQUES */
+.wave-music-card .wave-music-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 26px;
+}
+
+.wave-music-card .wave-music-features > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 12px;
+
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+/* ÍCONES DOS BOXES */
+.wave-music-card .wave-feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+
+    .wave-music-card .wave-music-footer {
+        align-items: center;
+        margin-inline: auto;
+    }
+
+    .wave-music-card .wave-music-features {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .wave-music-card .wave-spotify-button {
+        width: fit-content;
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+
+    .wave-music-card .wave-music-features > span {
+        font-size: 12px;
+        padding: 9px 11px;
+    }
+
+    .wave-music-card .wave-feature-icon {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================= */
+/* WAVE SPOTIFY — REDESIGN LIMPO E ORGANIZADO */
+/* ========================================= */
+
+/* CARD PRINCIPAL */
+.playlist-section .wave-music-redesign {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 58px;
+
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 55px 58px;
+
+    background:
+        radial-gradient(
+            circle at 24% 45%,
+            rgba(116, 33, 214, 0.17),
+            transparent 55%
+        ),
+        linear-gradient(135deg, #181020, #100b18);
+
+    border: 1px solid rgba(170, 105, 255, 0.25);
+    border-radius: 26px;
+    box-sizing: border-box;
+}
+
+/* CAPA */
+.playlist-section .wave-music-redesign .wave-music-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.playlist-section .wave-music-redesign .wave-music-cover {
+    width: 100%;
+    max-width: 330px;
+    aspect-ratio: 1;
+    margin: 0;
+}
+
+/* CONTEÚDO */
+.playlist-section .wave-music-redesign .wave-music-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.playlist-section .wave-music-redesign .wave-music-info h2 {
+    margin: 0 0 22px;
+    font-size: clamp(29px, 3.2vw, 44px);
+    line-height: 1.2;
+}
+
+.playlist-section .wave-music-redesign .wave-music-description {
+    max-width: 490px;
+    margin: 0 0 27px;
+    color: #b8aec3;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* DESTAQUES — GRID ORGANIZADO */
+.playlist-section .wave-music-redesign .wave-music-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 490px;
+    margin: 0 0 28px;
+}
+
+.playlist-section .wave-music-redesign .wave-highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 52px;
+    padding: 11px 13px;
+
+    background: rgba(143, 75, 231, 0.08);
+    border: 1px solid rgba(169, 111, 244, 0.2);
+    border-radius: 11px;
+    box-sizing: border-box;
+
+    color: #dbc6f5;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* TERCEIRO DESTAQUE OCUPA A LINHA INTEIRA */
+.playlist-section .wave-music-redesign .wave-highlight:last-child {
+    grid-column: 1 / -1;
+}
+
+/* ÍCONES */
+.playlist-section .wave-music-redesign .wave-highlight-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+
+    background: rgba(149, 76, 255, 0.16);
+    border-radius: 7px;
+
+    color: #c794ff;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* BOTÃO E LEGENDA */
+.playlist-section .wave-music-redesign .wave-music-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+}
+
+.playlist-section .wave-music-redesign .wave-spotify-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    width: auto;
+    max-width: 100%;
+    padding: 16px 22px;
+
+    background: #1ed760;
+    border: none;
+    border-radius: 12px;
+
+    color: #07130d;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.3;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    box-shadow: 0 10px 28px rgba(30, 215, 96, 0.1);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.playlist-section .wave-music-redesign .wave-spotify-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(30, 215, 96, 0.2);
+}
+
+.playlist-section .wave-music-redesign .wave-spotify-button svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.playlist-section .wave-music-redesign .wave-spotify-arrow {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* LEGENDA CENTRALIZADA */
+.playlist-section .wave-music-redesign .wave-music-footer-note {
+    display: block;
+    width: 100%;
+    color: #94899f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* SELO EXTERNO */
+.playlist-section .wave-playlist-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.playlist-section .wave-playlist-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+
+    background: rgba(124, 35, 255, 0.1);
+    border: 1px solid rgba(174, 103, 255, 0.4);
+    border-radius: 50px;
+
+    color: #d2afff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .playlist-section .wave-music-redesign {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 28px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-highlights {
+        max-width: 500px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-action {
+        align-items: center;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .playlist-section .wave-music-redesign {
+        gap: 30px;
+        padding: 30px 18px;
+        border-radius: 19px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-cover {
+        max-width: 250px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-info h2 {
+        font-size: 27px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-description {
+        font-size: 14px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-music-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .playlist-section .wave-music-redesign .wave-highlight:last-child {
+        grid-column: auto;
+    }
+
+    .playlist-section .wave-music-redesign .wave-highlight {
+        min-height: 48px;
+    }
+
+    .playlist-section .wave-music-redesign .wave-spotify-button {
+        padding: 15px 18px;
+        font-size: 12px;
+    }
+}
+
+
+/* CENTRALIZAR SOMENTE O BOX SELEÇÃO VERBO DA VIDA */
+
+.playlist-section .wave-music-redesign .wave-highlight:last-child {
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* CENTRALIZAR OS TRÊS BOXES DO SPOTIFY */
+
+.playlist-section .wave-music-redesign .wave-highlight {
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* CENTRALIZAR BOTÃO DO SPOTIFY ABAIXO DOS BOXES */
+
+.playlist-section .wave-music-redesign .wave-music-action {
+    align-self: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* MANTER A LEGENDA CENTRALIZADA */
+.playlist-section .wave-music-redesign .wave-music-footer-note {
+    text-align: center;
+    width: 100%;
+}
+
+
+/* FONTE DOS BOTÕES INICIAIS — CELULAR */
+
+@media (max-width: 780px) {
+    .hero-actions .button {
+        font-size: 14px;
+    }
+}
+
+
+/* WAVE — ANIMAÇÃO DO MENU HAMBÚRGUER */
+
+.menu-toggle span {
+    display: block;
+    transform-origin: center;
+    transition: transform .3s ease, opacity .2s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =========================================
+   WAVE — CARDS COMPACTOS NO CELULAR
+   ========================================= */
+
+@media (max-width: 780px) {
+
+    .hero-floating-cards {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+
+        width: 100%;
+        max-width: 390px;
+        margin: 18px auto 20px;
+    }
+
+    .hero-floating-cards .hero-float-card {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 105px;
+
+        padding: 13px 8px;
+        gap: 7px;
+        text-align: center;
+
+        border-radius: 15px;
+    }
+
+    /* Terceiro card ocupa a linha inferior */
+    .hero-floating-cards .float-three {
+        grid-column: 1 / -1;
+        min-height: 82px;
+        flex-direction: row;
+        gap: 13px;
+    }
+
+    /* Ícones menores */
+    .hero-floating-cards .float-icon {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        font-size: 19px;
+        border-radius: 10px;
+    }
+
+    /* Informações */
+    .hero-floating-cards .hero-float-card > div {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .hero-floating-cards .hero-float-card strong {
+        display: block;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .hero-floating-cards .hero-float-card > div > span {
+        display: block;
+        font-size: 11px;
+        line-height: 1.4;
+        margin-top: 3px;
+    }
+
+    .hero-floating-cards .float-three > div {
+        text-align: left;
+    }
+}
+
+
+/* WAVE — AJUSTES DO TOPO NO CELULAR */
+
+@media (max-width: 780px) {
+
+    /* Diminui o espaço entre o cabeçalho e o conteúdo */
+    .hero {
+        padding-top: 35px !important;
+    }
+
+    /* Mantém o texto do selo em uma única linha */
+    .hero-content > .eyebrow {
+        display: flex;
+        width: max-content;
+        max-width: none;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+
+        font-size: clamp(7px, 2.05vw, 10px);
+        letter-spacing: 0;
+        padding: 10px 8px;
+        gap: 5px;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-content > .eyebrow i {
+        flex-shrink: 0;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+
+/* WAVE — SELO CENTRALIZADO NO CELULAR */
+
+@media (max-width: 780px) {
+
+    .hero {
+        padding-top: 35px !important;
+    }
+
+    .hero-content > .eyebrow {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+
+        transform: none !important;
+        position: relative;
+        left: auto;
+        right: auto;
+
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        font-size: clamp(7px, 1.85vw, 9px);
+        letter-spacing: 0;
+        padding: 9px 7px;
+        gap: 5px;
+    }
+
+    .hero-content > .eyebrow i {
+        flex-shrink: 0;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+
+@media (max-width: 780px) {
+    .hero-content > .eyebrow {
+        display: flex;
+        width: max-content;
+        max-width: 100%;
+        margin: 0 auto;
+        transform: none !important;
+
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        font-size: clamp(9px, 2.5vw, 11px);
+        letter-spacing: -0.3px;
+        padding: 9px 5px;
+        gap: 4px;
+    }
+
+    .hero-content > .eyebrow i {
+        flex-shrink: 0;
+        width: 4px;
+        height: 4px;
+    }
+}
+
+
+@media (max-width: 780px) {
+    .hero-content > .eyebrow {
+        font-size: 11px;
+        padding: 9px 15px;
+        gap: 6px;
+    }
+}
+
+
+/* =====================================
+   WAVE — LOGO DO CABEÇALHO
+   ===================================== */
+
+.site-header .brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.site-header .brand-logo {
+    display: block;
+    width: 130px;
+    height: 52px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 780px) {
+    .site-header .brand-logo {
+        width: 110px;
+        height: 44px;
+    }
+}
+
+
+/* ==========================================
+   WAVE — LUZ INTERATIVA NO MOBILE
+   ========================================== */
+
+@media (max-width: 780px) and (pointer: coarse) {
+
+    .wave-touch-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 280px;
+        height: 280px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+            circle,
+            rgba(125, 35, 255, 0.32) 0%,
+            rgba(125, 35, 255, 0.16) 35%,
+            rgba(125, 35, 255, 0.05) 60%,
+            transparent 75%
+        );
+
+        pointer-events: none;
+        z-index: 2;
+
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+
+        transition: opacity 0.3s ease;
+    }
+}
+
+
+/* ==========================================
+   WAVE — SPOTIFY ALINHADO À ESQUERDA
+   SOMENTE MOBILE
+   ========================================== */
+
+@media (max-width: 780px) {
+
+    .playlist-section .wave-music-redesign
+    .wave-music-highlights .wave-highlight {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        text-align: left !important;
+    }
+
+    /* Alinha o texto à esquerda */
+    .playlist-section .wave-music-redesign
+    .wave-highlight > span:last-child {
+        text-align: left !important;
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Mantém os ícones à esquerda */
+    .playlist-section .wave-music-redesign
+    .wave-highlight-icon {
+        flex-shrink: 0;
+    }
+}
+
+
+/* ==========================================
+   WAVE — MOLDURA PREMIUM DO QR CODE
+   ========================================== */
+
+.qr-code,
+.qr-code-container,
+.qr-code-wrapper,
+.qr-wrapper,
+.qr-box,
+.qr-code-box {
+    background: linear-gradient(
+        145deg,
+        rgba(125, 35, 255, 0.22),
+        rgba(125, 35, 255, 0.06)
+    );
+
+    border: 1px solid rgba(170, 110, 255, 0.45);
+    border-radius: 24px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 0 25px rgba(125, 35, 255, 0.15),
+        inset 0 0 18px rgba(125, 35, 255, 0.08);
+
+    overflow: hidden;
+}
+
+/* Imagem do QR Code */
+
+.qr-code img,
+.qr-code-container img,
+.qr-code-wrapper img,
+.qr-wrapper img,
+.qr-box img,
+.qr-code-box img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    background: #ffffff;
+    border: 8px solid #ffffff;
+    border-radius: 14px;
+
+    box-sizing: border-box;
+}
+
+/* Ajuste para celular */
+
+@media (max-width: 780px) {
+
+    .qr-code,
+    .qr-code-container,
+    .qr-code-wrapper,
+    .qr-wrapper,
+    .qr-box,
+    .qr-code-box {
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE — CORREÇÃO DE ROLAGEM MOBILE
+   CRONOGRAMA E DEPARTAMENTOS
+   ========================================== */
+
+@media (max-width: 780px) {
+
+    .schedule-cards,
+    .department-cards {
+        /* Rolagem apenas na horizontal */
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        /* Permite gestos verticais na página */
+        touch-action: pan-x pan-y !important;
+
+        /* Evita prender a rolagem nas bordas */
+        overscroll-behavior-x: auto;
+
+        /* Rolagem horizontal suave */
+        -webkit-overflow-scrolling: touch;
+
+        /* Evita encaixes agressivos dos cards */
+        scroll-snap-type: x proximity !important;
+    }
+
+    .schedule-card,
+    .department-card {
+        scroll-snap-align: start;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE — APROXIMAR BOX DO CABEÇALHO (PC)
+   ========================================== */
+
+@media (min-width: 781px) {
+
+    .hero {
+        padding-top: 25px !important;
+    }
+
+}
+
+.hero h1 {
+    font-size: clamp(44px, 6.8vw, 80px);
+}
+
+
+/* Aproximar os dois botões do cabeçalho no PC */
+@media (min-width: 1051px) {
+    .main-nav > .nav-cta + .nav-cta {
+        margin-left: -8px;
+    }
+}
+
+
+/* ==========================================
+   WAVE — CABEÇALHO CENTRALIZADO E COMPACTO
+   ========================================== */
+
+@media screen and (min-width: 1051px) {
+
+    .site-header .nav-wrap {
+        width: max-content !important;
+        max-width: calc(100% - 40px) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(18px, 1.5vw, 30px) !important;
+    }
+
+    .site-header .brand {
+        flex-shrink: 0;
+    }
+
+    .site-header .main-nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(9px, 1vw, 18px) !important;
+    }
+
+    .site-header .main-nav > .nav-cta + .nav-cta {
+        margin-left: 0 !important;
+    }
+
+}

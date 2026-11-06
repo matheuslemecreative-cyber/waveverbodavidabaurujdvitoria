@@ -1,0 +1,2067 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090610">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="WAVE NEWS — Ministrações, avisos e eventos do Ministério WAVE, Verbo da Vida Bauru.">
+  <link rel="icon" type="image/jpeg" href="favicon-wave.jpeg">
+
+  <title>WAVE NEWS | O Portal da Nossa Geração</title>
+
+  <link rel="icon" type="image/jpeg" href="favicon-wave.jpg">
+
+  <!-- FONTES ORIGINAIS WAVE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS PRINCIPAL DO SITE WAVE -->
+  <link rel="stylesheet" href="style.css?v=5">
+
+  <style>
+
+    /* ==========================================
+       WAVE NEWS — CONFIGURAÇÕES
+       ========================================== */
+
+    :root {
+      --news-bg: #090610;
+      --news-purple: #7d23ff;
+      --news-purple-light: #b985ff;
+      --news-text: #f8f6ff;
+      --news-muted: #aaa3bd;
+      --news-border: rgba(185,139,255,.19);
+      --news-display: "Orbitron", sans-serif;
+      --news-body: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--news-bg);
+      color: var(--news-text);
+      font-family: var(--news-body);
+      overflow-x: hidden;
+    }
+
+    /* MESMA FONTE FUTURISTA DO INDEX */
+
+    .news-page h1,
+    .news-page h2,
+    .news-page h3,
+    .news-stat strong,
+    .news-footer-logo {
+      font-family: var(--news-display);
+      font-weight: 900;
+    }
+
+    /* ==========================================
+       CABEÇALHO ORIGINAL
+       ========================================== */
+
+    .news-header .main-nav {
+      gap: clamp(10px,1.4vw,22px);
+    }
+
+    .news-header .main-nav > a:not(.nav-cta) {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .news-header .nav-cta {
+      background: #7d23ff;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* ==========================================
+       HERO — ENTRADA WAVE NEWS
+       ========================================== */
+
+    .news-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 790px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 22px 110px;
+
+      background:
+        radial-gradient(
+          ellipse at 18% 40%,
+          rgba(111,27,213,.22),
+          transparent 48%
+        ),
+        radial-gradient(
+          ellipse at 85% 12%,
+          rgba(90,25,155,.15),
+          transparent 42%
+        ),
+        #090610;
+    }
+
+    .news-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 700px;
+      height: 700px;
+      left: -350px;
+      top: 12%;
+      background: rgba(108,25,225,.16);
+      filter: blur(130px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .news-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 550px;
+      height: 550px;
+      right: -300px;
+      top: -250px;
+      background: rgba(155,89,255,.14);
+      filter: blur(120px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .news-hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+    }
+
+    /* CÁPSULA SUPERIOR */
+
+    .news-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      max-width: 100%;
+      padding: 18px 30px;
+      margin-bottom: 35px;
+
+      border: 1px solid rgba(173,99,255,.38);
+      border-radius: 100px;
+
+      background: rgba(33,13,56,.46);
+      color: #c9a5ef;
+
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      line-height: 1.5;
+
+      box-shadow: inset 0 0 22px rgba(125,35,255,.04);
+
+      animation: newsFadeDown .8s ease both;
+    }
+
+    .news-pill-dot {
+      width: 9px;
+      height: 9px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #a960ff;
+      box-shadow: 0 0 15px rgba(169,96,255,.8);
+    }
+
+    /* TRÊS BOXES */
+
+    .news-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+      max-width: 960px;
+      margin: 0 auto 48px;
+
+      animation: newsFadeUp .9s .15s ease both;
+    }
+
+    .news-stat {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 112px;
+      padding: 20px 23px;
+
+      border: 1px solid rgba(173,99,255,.33);
+      border-radius: 18px;
+
+      background: rgba(25,14,42,.75);
+      backdrop-filter: blur(12px);
+
+      text-align: left;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+      animation: newsFloat 5s ease-in-out infinite;
+    }
+
+    .news-stat:nth-child(2) {
+      animation-delay: .7s;
+    }
+
+    .news-stat:nth-child(3) {
+      animation-delay: 1.4s;
+    }
+
+    .news-stat:hover {
+      border-color: rgba(185,139,255,.7);
+      box-shadow: 0 12px 40px rgba(125,35,255,.15);
+    }
+
+    .news-stat-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: #31145b;
+      color: #c9a0ff;
+    }
+
+    .news-stat-icon svg {
+      width: 25px;
+      height: 25px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .news-stat strong {
+      display: block;
+      color: #cba8f8;
+      font-size: 18px;
+      line-height: 1.3;
+      letter-spacing: -.7px;
+    }
+
+    .news-stat span {
+      display: block;
+      margin-top: 8px;
+      color: #aaa0b9;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* TÍTULO GIGANTE */
+
+    .news-hero-title {
+      max-width: 1150px;
+      margin: 0 auto;
+      font-family: var(--news-display);
+      font-size: clamp(42px,7.3vw,104px);
+      font-weight: 900;
+      line-height: 1.17;
+      letter-spacing: -3.5px;
+      text-align: center;
+      text-transform: uppercase;
+
+      animation: newsFadeUp 1s .3s ease both;
+    }
+
+    .news-hero-title .news-gradient {
+      display: inline-block;
+      background: linear-gradient(
+        90deg,
+        #c99dff 0%,
+        #9c52ff 45%,
+        #7921ed 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .news-hero-description {
+      max-width: 670px;
+      margin: 32px auto 0;
+      color: #b4a9c7;
+      font-size: 15px;
+      line-height: 1.9;
+
+      animation: newsFadeUp 1s .45s ease both;
+    }
+
+    .news-hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+
+      animation: newsFadeUp 1s .6s ease both;
+    }
+
+    .news-hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 23px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .news-hero-button.primary {
+      background: #7d23ff;
+      color: white;
+      box-shadow: 0 10px 30px rgba(125,35,255,.22);
+    }
+
+    .news-hero-button.primary:hover {
+      background: #9245ff;
+      transform: translateY(-3px);
+    }
+
+    .news-hero-button.secondary {
+      background: rgba(23,15,37,.75);
+      border: 1px solid rgba(185,139,255,.28);
+      color: #e5d8f6;
+    }
+
+    .news-hero-button.secondary:hover {
+      border-color: #9b59ff;
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================
+       ANIMAÇÕES
+       ========================================== */
+
+    @keyframes newsFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes newsFadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes newsFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    /* ==========================================
+       ÁREA DE NOTÍCIAS
+       ========================================== */
+
+    .news-main {
+      max-width: 1280px;
+      margin: auto;
+      padding: 90px 25px 110px;
+      scroll-margin-top: 100px;
+    }
+
+    .news-section-heading {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .news-section-heading .news-label {
+      color: #b78aff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .news-section-heading h2 {
+      font-size: clamp(27px,4vw,43px);
+      margin: 17px 0;
+      line-height: 1.3;
+      letter-spacing: -1px;
+    }
+
+    .news-section-heading h2 span {
+      color: #a56aff;
+    }
+
+    .news-section-heading p {
+      color: #aaa3bd;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* ==========================================
+       FILTROS
+       ========================================== */
+
+    .news-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
+
+    .news-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .news-filter {
+      padding: 12px 19px;
+      border: 1px solid rgba(185,139,255,.18);
+      border-radius: 11px;
+      background: #151020;
+      color: #c5bfd1;
+      font-size: 12px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .news-filter:hover {
+      border-color: #9b59ff;
+      color: white;
+    }
+
+    .news-filter.active {
+      background: #7d23ff;
+      border-color: #7d23ff;
+      color: white;
+      box-shadow: 0 5px 20px rgba(125,35,255,.25);
+    }
+
+    .news-search {
+      width: 280px;
+      max-width: 100%;
+      padding: 14px 17px;
+      border: 1px solid rgba(185,139,255,.18);
+      border-radius: 11px;
+      background: #151020;
+      color: white;
+      font-size: 13px;
+      outline: none;
+      transition: .2s;
+    }
+
+    .news-search:focus {
+      border-color: #9b59ff;
+    }
+
+    .news-search::placeholder {
+      color: #898197;
+    }
+
+    /* ==========================================
+       CONTADOR
+       ========================================== */
+
+    .news-results {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .news-results h3 {
+      font-size: 17px;
+    }
+
+    .news-count {
+      color: #aaa3bd;
+      font-size: 12px;
+    }
+
+    /* ==========================================
+       CARDS
+       ========================================== */
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(185,139,255,.16);
+      border-radius: 18px;
+      background: linear-gradient(
+        145deg,
+        #171222,
+        #100d19
+      );
+
+      transition:
+        transform .3s,
+        border-color .3s,
+        box-shadow .3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(155,89,255,.55);
+      box-shadow: 0 20px 45px rgba(83,20,180,.2);
+    }
+
+    .news-card:focus-visible {
+      outline: 2px solid #b78aff;
+      outline-offset: 4px;
+    }
+
+    .news-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: #211331;
+      overflow: hidden;
+    }
+
+    .news-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.045);
+    }
+
+    .news-category {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 8px 12px;
+      background: rgba(15,9,25,.93);
+      border: 1px solid rgba(185,139,255,.3);
+      border-radius: 8px;
+      color: #d0b2ff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .news-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 25px;
+    }
+
+    .news-date {
+      color: #b78aff;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .news-card h3 {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 13px;
+      letter-spacing: -.4px;
+    }
+
+    .news-description {
+      color: #aaa3bd;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 23px;
+      overflow-wrap: anywhere;
+    }
+
+    .news-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 19px;
+      border-top: 1px solid rgba(185,139,255,.13);
+    }
+
+    .news-age {
+      color: #938aa5;
+      font-size: 11px;
+    }
+
+    .news-card-link {
+      color: #c6a0ff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .news-card-link:hover {
+      color: white;
+    }
+
+    .news-empty {
+      display: none;
+      padding: 65px 20px;
+      text-align: center;
+      border: 1px dashed rgba(185,139,255,.2);
+      border-radius: 17px;
+      color: #aaa3bd;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ==========================================
+       RODAPÉ
+       ========================================== */
+
+    .news-site-footer {
+      padding: 45px 20px;
+      background: #0c0815;
+      border-top: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+    }
+
+    .news-footer-logo {
+      font-size: 22px;
+      color: #9b59ff;
+    }
+
+    .news-site-footer p {
+      color: #92889f;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* ==========================================
+       RESPONSIVIDADE
+       ========================================== */
+
+    @media (max-width: 1050px) {
+
+      .news-hero {
+        min-height: 720px;
+      }
+
+      .news-hero-title {
+        font-size: clamp(45px,7.5vw,80px);
+      }
+
+      .news-hero-stats {
+        max-width: 850px;
+      }
+
+      .news-stat {
+        padding: 17px;
+      }
+
+      .news-stat strong {
+        font-size: 15px;
+      }
+
+      .news-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+    }
+
+    @media (max-width: 780px) {
+
+      .news-header .main-nav {
+        gap: 0;
+      }
+
+      .news-hero {
+        min-height: auto;
+        padding: 65px 18px 85px;
+      }
+
+      .news-hero-pill {
+        font-size: 10px;
+        padding: 13px 16px;
+        gap: 9px;
+        margin-bottom: 28px;
+        letter-spacing: .25px;
+      }
+
+      .news-pill-dot {
+        width: 7px;
+        height: 7px;
+      }
+
+      .news-hero-stats {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        gap: 8px;
+        margin-bottom: 38px;
+      }
+
+      .news-stat {
+        min-height: 115px;
+        padding: 12px 8px;
+        border-radius: 12px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 9px;
+      }
+
+      .news-stat-icon {
+        width: 37px;
+        height: 37px;
+        border-radius: 10px;
+      }
+
+      .news-stat-icon svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .news-stat strong {
+        font-size: clamp(9px,2.1vw,13px);
+        letter-spacing: -.3px;
+      }
+
+      .news-stat span {
+        font-size: 9px;
+        margin-top: 5px;
+      }
+
+      .news-hero-title {
+        font-size: clamp(35px,8.5vw,64px);
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+        overflow-wrap: normal;
+      }
+
+      .news-hero-description {
+        font-size: 13px;
+        margin-top: 25px;
+      }
+
+      .news-main {
+        padding: 70px 18px 85px;
+      }
+
+      .news-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .news-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        touch-action: pan-x pan-y;
+        scroll-snap-type: x proximity;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+
+      .news-filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .news-filter {
+        flex-shrink: 0;
+      }
+
+      .news-search {
+        width: 100%;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .news-card-content {
+        padding: 22px;
+      }
+
+      .news-results h3 {
+        font-size: 14px;
+      }
+
+    }
+
+    @media (max-width: 380px) {
+
+      .news-hero-title {
+        font-size: 32px;
+      }
+
+      .news-stat strong {
+        font-size: 9px;
+      }
+
+      .news-stat span {
+        font-size: 8px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .news-hero-pill,
+      .news-hero-stats,
+      .news-hero-title,
+      .news-hero-description,
+      .news-hero-actions,
+      .news-stat {
+        animation: none !important;
+      }
+
+    }
+
+    
+/* ==========================================
+   WAVE NEWS — AJUSTES FINOS DA ENTRADA
+   ========================================== */
+
+/* TÍTULO PRINCIPAL MENOR */
+
+.news-hero-title {
+    max-width: 1050px;
+    font-size: clamp(38px, 6vw, 82px);
+    line-height: 1.2;
+    letter-spacing: -2.5px;
+}
+
+/* CÁPSULA ROXA SUPERIOR MENOR */
+
+.news-hero-pill {
+    padding: 13px 22px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    gap: 9px;
+}
+
+/* PONTINHO ROXO */
+
+.news-pill-dot {
+    width: 7px;
+    height: 7px;
+}
+
+/* TRÊS BOXES MAIS PROPORCIONAIS */
+
+.news-hero-stats {
+    max-width: 880px;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.news-stat {
+    min-height: 98px;
+    padding: 17px 19px;
+    gap: 13px;
+}
+
+.news-stat-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.news-stat strong {
+    font-size: 16px;
+}
+
+.news-stat span {
+    font-size: 11px;
+}
+
+/* AJUSTE DOS ESPAÇAMENTOS */
+
+.news-hero {
+    min-height: 690px;
+    padding-top: 65px;
+    padding-bottom: 85px;
+}
+
+.news-hero-description {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE — CELULAR
+   ========================================== */
+
+@media (max-width: 780px) {
+
+    .news-hero {
+        min-height: auto;
+        padding: 55px 17px 70px;
+    }
+
+    .news-hero-title {
+        font-size: clamp(29px, 7.4vw, 48px);
+        line-height: 1.25;
+        letter-spacing: -1px;
+    }
+
+    .news-hero-pill {
+        padding: 10px 13px;
+        margin-bottom: 25px;
+        font-size: 9px;
+        letter-spacing: 0.2px;
+        gap: 7px;
+    }
+
+    .news-hero-stats {
+        gap: 8px;
+        margin-bottom: 33px;
+    }
+
+    .news-stat {
+        min-height: 100px;
+        padding: 10px 6px;
+        gap: 8px;
+    }
+
+    .news-stat-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .news-stat strong {
+        font-size: clamp(9px, 2vw, 12px);
+    }
+
+    .news-stat span {
+        font-size: 9px;
+    }
+
+    .news-hero-description {
+        font-size: 12px;
+        margin-top: 22px;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — FONTE DO CABEÇALHO
+   ========================================== */
+
+@media (min-width: 1051px) {
+
+    .news-header .main-nav > a:not(.nav-cta):not(.social-link) {
+        font-family: "Inter", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.3px !important;
+    }
+
+    .news-header .main-nav .nav-cta {
+        font-family: "Inter", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — APROXIMAR BOX DO CABEÇALHO
+   SOMENTE PC
+   ========================================== */
+
+@media screen and (min-width: 781px) {
+
+    .news-hero {
+        padding-top: 35px !important;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — ESPAÇAMENTO DO BOX NO CELULAR
+   ========================================== */
+
+@media screen and (max-width: 780px) {
+
+    .news-hero {
+        padding-top: 25px !important;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — CORRIGIR ROLAGEM HORIZONTAL
+   ========================================== */
+
+@media screen and (max-width: 780px) {
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip !important;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip !important;
+        margin: 0;
+    }
+
+    .news-hero,
+    .news-hero-content,
+    main,
+    .site-header {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .news-hero {
+        overflow-x: clip;
+    }
+
+    .news-hero-content {
+        min-width: 0;
+    }
+
+    img,
+    svg {
+        max-width: 100%;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — CATEGORIAS DESLIZÁVEIS
+   SOMENTE NO CELULAR
+   ========================================== */
+
+@media screen and (max-width: 780px) {
+
+    .news-filters {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+
+        scrollbar-width: none;
+        padding-bottom: 5px;
+    }
+
+    .news-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .news-filters button {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — CATEGORIAS ATÉ A BORDA
+   SOMENTE CELULAR
+   ========================================== */
+
+@media screen and (max-width: 780px) {
+
+    .news-filters {
+        width: calc(100% + 40px) !important;
+        max-width: none !important;
+
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+
+        padding-left: 20px !important;
+        padding-right: 0 !important;
+
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .news-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .news-filters button {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+    .news-filters button:last-child {
+        margin-right: 0 !important;
+    }
+
+}
+
+
+/* ==========================================
+   WAVE NEWS — DATA E HORÁRIO DOS EVENTOS
+   ========================================== */
+
+.news-event-date {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin-bottom: 22px;
+    padding: 15px 17px;
+
+    background: rgba(125, 35, 255, 0.10);
+    border: 1px solid rgba(185, 139, 255, 0.30);
+    border-radius: 12px;
+
+    box-shadow: inset 0 0 20px rgba(125, 35, 255, 0.04);
+}
+
+.news-event-label {
+    color: #b985ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.news-event-date strong {
+    color: #f8f6ff;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 780px) {
+
+    .news-event-date {
+        padding: 13px 14px;
+        margin-bottom: 20px;
+    }
+
+    .news-event-date strong {
+        font-size: 14px;
+    }
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- EFEITOS VISUAIS ORIGINAIS -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <!-- ==========================================
+       CABEÇALHO WAVE
+       ========================================== -->
+
+  <header class="site-header news-header" id="topo">
+
+    <div class="nav-wrap">
+
+<a class="brand" href="#inicio" aria-label="WAVE início">
+    <img
+        src="logo-wave.png"
+        alt="Logo WAVE"
+        class="brand-logo"
+        width="130"
+        height="52"
+    >
+</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+
+        <a href="index.html#quem-somos">Quem Somos</a>
+        <a href="index.html#cronograma">Cronograma</a>
+        <a href="index.html#departamentos">Departamentos</a>
+        <a href="index.html#camiseta">Camiseta Wave</a>
+        <a href="index.html#comunidade">Comunidade WhatsApp</a>
+        <a href="index.html#localizacao">Localização</a>
+        <a href="index.html#faq">FAQ</a>
+
+        <a
+          class="social-link"
+          href="https://www.instagram.com/wave.jdvitoria/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram WAVE"
+        >
+          <span class="icon-svg">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"
+                fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4"
+                fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2"
+                fill="currentColor"/>
+            </svg>
+          </span>
+        </a>
+
+        <a
+          class="social-link"
+          href="https://chat.whatsapp.com/HDwVCRInnBY8kjP2pW9mrK"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Comunidade WhatsApp WAVE"
+        >
+          <span class="icon-svg">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5Z"
+                fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 8.5c.5 2.7 2.1 4.3 4.8 5l1.2-1.1 2 1.1c-.4 1.7-1.6 2.3-3 2-3.1-.6-5.8-3.3-6.4-6.4-.3-1.4.3-2.6 2-3l1.1 2-1.7 1.4Z"
+                fill="currentColor"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="index.html" class="nav-cta">
+          Voltar ao Início
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <div class="news-page">
+
+    <!-- ==========================================
+         HERO WAVE NEWS
+         ========================================== -->
+
+    <section class="news-hero" id="inicio">
+
+      <div class="news-hero-inner">
+
+        <!-- CÁPSULA -->
+
+        <div class="news-hero-pill">
+          <span class="news-pill-dot"></span>
+          TUDO QUE ACONTECE NO WAVE, EM UM SÓ LUGAR
+        </div>
+
+        <!-- TRÊS BOXES -->
+
+        <div class="news-hero-stats">
+
+          <div class="news-stat">
+
+            <div class="news-stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v18M5 8h14M7 8l-2 5h4l-2-5ZM17 8l-2 5h4l-2-5Z"/>
+                <path d="M4 13h6M14 13h6M7 21h10"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>PALAVRA</strong>
+              <span>Ministrações da semana</span>
+            </div>
+
+          </div>
+
+          <div class="news-stat">
+
+            <div class="news-stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 5h16v14H4z"/>
+                <path d="M8 9h8M8 13h8M8 17h5"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>AVISOS</strong>
+              <span>Fique por dentro</span>
+            </div>
+
+          </div>
+
+          <div class="news-stat">
+
+            <div class="news-stat-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2"/>
+                <path d="M7 3v4M17 3v4M3 10h18"/>
+                <path d="m9 15 2 2 4-4"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>EVENTOS</strong>
+              <span>Momentos especiais</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- TÍTULO -->
+
+        <h1 class="news-hero-title">
+          O PORTAL QUE<br>
+          <span class="news-gradient">CONECTA</span><br>
+          NOSSA GERAÇÃO.
+        </h1>
+
+        <!-- DESCRIÇÃO -->
+
+        <p class="news-hero-description">
+          Uma geração conectada com o propósito de Deus.
+          Acompanhe as ministrações, os avisos e todos os
+          acontecimentos que fazem parte da nossa história.
+        </p>
+
+        <!-- BOTÕES -->
+
+        <div class="news-hero-actions">
+
+          <a href="#noticias" class="news-hero-button primary">
+            EXPLORAR NOTÍCIAS ↓
+          </a>
+
+          <a href="index.html" class="news-hero-button secondary">
+            CONHECER O WAVE
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         PORTAL DE NOTÍCIAS
+         ========================================== -->
+
+    <main class="news-main" id="noticias">
+
+
+
+      <!-- FILTROS -->
+
+      <div class="news-toolbar">
+
+        <div class="news-filters">
+
+          <button class="news-filter active" data-filter="todos">
+            Todas
+          </button>
+
+          <button class="news-filter" data-filter="ministracao">
+            Ministrações
+          </button>
+
+          <button class="news-filter" data-filter="aviso">
+            Avisos
+          </button>
+
+          <button class="news-filter" data-filter="evento">
+            Eventos
+          </button>
+
+          <button class="news-filter" data-filter="redes-sociais">
+            Redes Sociais
+          </button>
+
+
+        </div>
+
+        <input
+          class="news-search"
+          id="newsSearch"
+          type="search"
+          placeholder="Pesquisar notícias..."
+          aria-label="Pesquisar notícias"
+        >
+
+      </div>
+
+      <!-- RESULTADOS -->
+
+      <div class="news-results">
+
+        <h3>PUBLICAÇÕES WAVE</h3>
+
+        <span class="news-count" id="newsCount"></span>
+
+      </div>
+
+      <!-- CARDS GERADOS PELO JAVASCRIPT -->
+
+      <div class="news-grid" id="newsGrid"></div>
+
+      <div class="news-empty" id="newsEmpty">
+        Nenhuma notícia encontrada.<br>
+        Tente outra pesquisa ou categoria.
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ==========================================
+       RODAPÉ
+       ========================================== -->
+
+  <footer class="news-site-footer">
+
+    <a href="index.html" class="news-footer-logo">
+      WAVE
+    </a>
+
+    <p>Uma nova onda começa aqui.</p>
+
+    <p>
+      Verbo da Vida Bauru • Ministério WAVE
+    </p>
+
+  </footer>
+
+  <!-- VOLTAR AO TOPO -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Voltar ao topo"
+  >
+    ↑
+  </button>
+
+  <script>
+
+    /* ==========================================
+       WAVE NEWS — PUBLICAÇÕES
+
+       ADICIONE NOVAS NOTÍCIAS AQUI.
+       MANTENHA AS ANTIGAS PARA PRESERVAR O HISTÓRICO.
+       ========================================== */
+
+    const noticias = [
+
+      
+{
+    id: 1,
+    categoria: "aviso",
+    titulo: "Wave News - Nosso portal de notícias.",
+    descricao: "Agora o Wave Bauru conta com um portal de notícias para os pais e adolescentes ficarem sabendo de tudo que acontece por aqui!",
+    imagem: "noticia-wavenews.png",
+
+    data: "2026-11-06",         // Data da publicação
+    link: "",
+    botao: "Saiba mais"
+},
+
+
+
+{
+    id: 2,
+    categoria: "evento",
+    titulo: "CineWave — Uma noite de cinema!",
+    descricao: "Se prepare e chame um amigo! Neste sábado teremos um CineWave, com filme surpresa e muita comunhão!",
+    imagem: "cinewave.png",
+    data: "2026-11-06",         // Data da publicação
+    dataEvento: "2026-11-07",  // Data do evento
+    horaEvento: "19h30",
+
+    link: "https://www.instagram.com/p/DfZ5cIUCphh/?utm_source=ig_web_copy_link&rpxt=NTc4MTIwNjQ2YQ==",
+    botao: "Saiba mais"
+},
+
+      {
+    id: 3,
+    categoria: "aviso",
+    titulo: "Reunião de Pais - Momento de alinhamento",
+    descricao: "Teremos uma reunião especial com os pais e responsáveis dos adolescentes do Wave para alinharmos os ensinamento e valores bíblicos do ministério.",
+    imagem: "reuniaopais.png",
+    data: "2026-11-06",         // Data da publicação
+    dataEvento: "2026-07-14",  // Data do evento
+    horaEvento: "19h30",
+
+    link: "",
+    botao: "Saiba mais"
+}
+
+
+    ];
+
+    /* ==========================================
+       SISTEMA DE NOTÍCIAS
+       ========================================== */
+
+    const newsGrid = document.getElementById("newsGrid");
+    const newsCount = document.getElementById("newsCount");
+    const newsSearch = document.getElementById("newsSearch");
+    const newsEmpty = document.getElementById("newsEmpty");
+
+    const filterButtons =
+      document.querySelectorAll(".news-filter");
+
+    let activeFilter = "todos";
+
+    const categorias = {
+      ministracao: "Ministração",
+      aviso: "Aviso",
+      evento: "Evento"
+    };
+
+    function calcularDias(dataPublicacao) {
+
+      const [ano, mes, dia] =
+        dataPublicacao.split("-").map(Number);
+
+      const hoje = new Date();
+
+      const dataUTC = Date.UTC(ano, mes - 1, dia);
+
+      const hojeUTC = Date.UTC(
+        hoje.getFullYear(),
+        hoje.getMonth(),
+        hoje.getDate()
+      );
+
+      return Math.floor(
+        (hojeUTC - dataUTC) / 86400000
+      );
+
+    }
+
+    function formatarData(data) {
+
+      const [ano, mes, dia] = data.split("-");
+
+      return `${dia}/${mes}/${ano}`;
+
+    }
+
+    function textoTempo(data) {
+
+      const dias = calcularDias(data);
+
+      if (dias < 0) return "Publicação programada";
+      if (dias === 0) return "Publicado hoje";
+      if (dias === 1) return "Publicado há 1 dia";
+
+      return `Publicado há ${dias} dias`;
+
+    }
+
+
+function criarCard(noticia) {
+
+    const card = document.createElement("article");
+    card.className = "news-card";
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "news-image";
+
+    const image = document.createElement("img");
+    image.src = noticia.imagem;
+    image.alt = noticia.titulo;
+    image.loading = "lazy";
+
+    const category = document.createElement("span");
+    category.className = "news-category";
+    category.textContent =
+        categorias[noticia.categoria] || "Notícia";
+
+    imageBox.append(image, category);
+
+    const content = document.createElement("div");
+    content.className = "news-card-content";
+
+    // DATA DA PUBLICAÇÃO
+    const date = document.createElement("span");
+    date.className = "news-date";
+    date.textContent =
+        `Publicado em ${formatarData(noticia.data)}`;
+
+    // TÍTULO
+    const title = document.createElement("h3");
+    title.textContent = noticia.titulo;
+
+    // DESCRIÇÃO
+    const description = document.createElement("p");
+    description.className = "news-description";
+    description.textContent = noticia.descricao;
+
+    content.append(date, title, description);
+
+    // DATA E HORÁRIO DO EVENTO
+    if (noticia.dataEvento) {
+
+        const partes = noticia.dataEvento.split("-").map(Number);
+
+        const [ano, mes, dia] = partes;
+
+        const dataValida =
+            partes.length === 3 &&
+            Number.isInteger(ano) &&
+            Number.isInteger(mes) &&
+            Number.isInteger(dia) &&
+            mes >= 1 &&
+            mes <= 12 &&
+            dia >= 1 &&
+            dia <= 31 &&
+            (() => {
+                const data = new Date(ano, mes - 1, dia);
+
+                return (
+                    data.getFullYear() === ano &&
+                    data.getMonth() === mes - 1 &&
+                    data.getDate() === dia
+                );
+            })();
+
+        if (dataValida) {
+
+            const eventBox = document.createElement("div");
+            eventBox.className = "news-event-date";
+
+            const eventLabel = document.createElement("span");
+            eventLabel.className = "news-event-label";
+            eventLabel.textContent = "DATA DO EVENTO";
+
+            const eventInfo = document.createElement("strong");
+            eventInfo.textContent =
+                formatarData(noticia.dataEvento) +
+                (noticia.horaEvento
+                    ? ` • ${noticia.horaEvento}`
+                    : "");
+
+            eventBox.append(eventLabel, eventInfo);
+
+            content.appendChild(eventBox);
+
+        }
+    }
+
+    // RODAPÉ DO CARD
+    const footer = document.createElement("div");
+    footer.className = "news-card-footer";
+
+    const age = document.createElement("span");
+    age.className = "news-age";
+    age.textContent = textoTempo(noticia.data);
+
+    footer.appendChild(age);
+
+    if (noticia.link) {
+
+        const link = document.createElement("a");
+        link.className = "news-card-link";
+        link.href = noticia.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent =
+            `${noticia.botao || "Saiba mais"} →`;
+
+        footer.appendChild(link);
+
+        card.style.cursor = "pointer";
+        card.tabIndex = 0;
+        card.setAttribute("role", "link");
+
+        function abrirNoticia() {
+            window.open(
+                noticia.link,
+                "_blank",
+                "noopener,noreferrer"
+            );
+        }
+
+        card.addEventListener("click", event => {
+            if (!event.target.closest("a")) {
+                abrirNoticia();
+            }
+        });
+
+        card.addEventListener("keydown", event => {
+            if (
+                event.target === card &&
+                (event.key === "Enter" || event.key === " ")
+            ) {
+                event.preventDefault();
+                abrirNoticia();
+            }
+        });
+    }
+
+    content.appendChild(footer);
+    card.append(imageBox, content);
+
+    return card;
+}
+
+    function renderizarNoticias() {
+
+      const pesquisa = newsSearch.value
+        .trim()
+        .toLocaleLowerCase("pt-BR");
+
+      const filtradas = noticias
+        .filter(noticia => {
+
+          const categoriaCorreta =
+            activeFilter === "todos" ||
+            noticia.categoria === activeFilter;
+
+          const texto =
+            `${noticia.titulo} ${noticia.descricao}`
+              .toLocaleLowerCase("pt-BR");
+
+          return categoriaCorreta && texto.includes(pesquisa);
+
+        })
+        .sort((a, b) => {
+
+          return (
+            b.data.localeCompare(a.data) ||
+            b.id - a.id
+          );
+
+        });
+
+      newsGrid.replaceChildren();
+
+      filtradas.forEach(noticia => {
+        newsGrid.appendChild(criarCard(noticia));
+      });
+
+      newsCount.textContent =
+        `${filtradas.length} publicações`;
+
+      newsEmpty.style.display =
+        filtradas.length ? "none" : "block";
+
+    }
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        activeFilter = button.dataset.filter;
+
+        renderizarNoticias();
+
+      });
+
+    });
+
+    newsSearch.addEventListener(
+      "input",
+      renderizarNoticias
+    );
+
+    renderizarNoticias();
+
+
+    /* ==========================================
+       MENU MOBILE
+       ========================================== */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+    function sincronizarMenu() {
+
+      const aberto = mainNav.classList.contains("open");
+
+      menuToggle.classList.toggle("active", aberto);
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(aberto)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+
+    }
+
+    function fecharMenu() {
+      mainNav.classList.remove("open");
+      sincronizarMenu();
+    }
+
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
+      sincronizarMenu();
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", fecharMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        fecharMenu();
+      }
+    });
+
+    document.addEventListener("click", event => {
+
+      if (
+        mainNav.classList.contains("open") &&
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        fecharMenu();
+      }
+
+    });
+
+
+    /* ==========================================
+       LUZ ROXA DO MOUSE
+       ========================================== */
+
+    const cursorGlow =
+      document.querySelector(".cursor-glow");
+
+    const finePointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    );
+
+    if (cursorGlow && finePointer.matches) {
+
+      let pointerX = window.innerWidth / 2;
+      let pointerY = window.innerHeight / 2;
+
+      let glowX = pointerX;
+      let glowY = pointerY;
+
+      let animationFrame = null;
+
+      function animateGlow() {
+
+        glowX += (pointerX - glowX) * 0.55;
+        glowY += (pointerY - glowY) * 0.55;
+
+        cursorGlow.style.left = `${glowX}px`;
+        cursorGlow.style.top = `${glowY}px`;
+
+        if (
+          Math.abs(pointerX - glowX) > 0.5 ||
+          Math.abs(pointerY - glowY) > 0.5
+        ) {
+
+          animationFrame =
+            requestAnimationFrame(animateGlow);
+
+        } else {
+
+          animationFrame = null;
+
+        }
+
+      }
+
+      window.addEventListener(
+        "pointermove",
+        event => {
+
+          pointerX = event.clientX;
+          pointerY = event.clientY;
+
+          if (!animationFrame) {
+            animationFrame =
+              requestAnimationFrame(animateGlow);
+          }
+
+        },
+        { passive: true }
+      );
+
+    }
+
+
+    /* ==========================================
+       LUZ DE TOQUE NO CELULAR
+       ========================================== */
+
+    const mobilePointer = window.matchMedia(
+      "(max-width: 780px) and (pointer: coarse)"
+    );
+
+    if (mobilePointer.matches) {
+
+      const glow = document.createElement("div");
+      glow.className = "wave-touch-glow";
+
+      document.body.appendChild(glow);
+
+      let x = window.innerWidth / 2;
+      let y = window.innerHeight / 2;
+
+      let targetX = x;
+      let targetY = y;
+
+      function atualizarToque(event) {
+        targetX = event.clientX;
+        targetY = event.clientY;
+      }
+
+      document.addEventListener(
+        "pointerdown",
+        atualizarToque,
+        { passive: true }
+      );
+
+      document.addEventListener(
+        "pointermove",
+        event => {
+          if (event.pointerType === "touch") {
+            atualizarToque(event);
+          }
+        },
+        { passive: true }
+      );
+
+      function animarToque() {
+
+        x += (targetX - x) * .12;
+        y += (targetY - y) * .12;
+
+        glow.style.transform =
+          `translate3d(${x - 140}px, ${y - 140}px, 0)`;
+
+        requestAnimationFrame(animarToque);
+
+      }
+
+      animarToque();
+
+    }
+
+
+    /* ==========================================
+       VOLTAR AO TOPO
+       ========================================== */
+
+    const backToTop =
+      document.getElementById("backToTop");
+
+    function atualizarBotaoTopo() {
+
+      backToTop.classList.toggle(
+        "visible",
+        window.scrollY > 500
+      );
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      atualizarBotaoTopo,
+      { passive: true }
+    );
+
+    atualizarBotaoTopo();
+
+    backToTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+    
+
+  </script>
+
+</body>
+</html>
